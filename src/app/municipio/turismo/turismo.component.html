@@ -1,0 +1,13 @@
+ <div id="root_div">
+    <div id="turismo_panel">
+      <div *ngIf="turismos_to_show" id="turismo_seccion">
+        <div  *ngFor="let turismo of turismos" class="turismo">
+          <p class="turismo_title">{{turismo.name}}</p>
+          <img src="{{turismo.img}}">
+          <p class="turismo_description">{{turismo.descr}}</p>
+        </div>
+      </div>
+      <p style="text-align: center">{{errormessage}}</p>
+    </div>
+  </div>
+

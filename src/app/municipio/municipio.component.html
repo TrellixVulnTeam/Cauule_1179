@@ -1,0 +1,14 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,300italic,400italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700' rel='stylesheet' type='text/css'>
+<div id="root_div">
+  <div class="header">
+    <div class="aux-flex"></div>
+    <ul class="headeroptions" id="nav-menu">
+      <li class="item" (click)="NavegarInfo()">INFO</li>
+      <li class="item" (click)="NavegarTurismo()">TURISMO</li>
+      <li class="item"(click)="NavegarVivienda()">VIVIENDA</li>
+      <li class="item" (click)="NavegarEmpleo()">EMPLEO</li>
+    </ul>
+    <div class="subscr_div" (click)="bellAction()"><img id ="subscr_bell" src="assets/images/icons/{{is_subs}}"></div>
+  </div>
+</div>

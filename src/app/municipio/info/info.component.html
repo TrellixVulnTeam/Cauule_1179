@@ -1,0 +1,76 @@
+<div id="root_div">
+  <div *ngIf="municipio" id="info_panel">
+    <p class="panel_title">Datos principales de {{municipio['name']}}:</p>
+    <p style="margin-top: 0" id="municipio_descripcion">{{municipio['descr']}}</p>
+
+
+    <div class="info_container">
+
+      <table class="table_data" id="population_data">
+        <tr>
+          <td colspan="4">Datos de poblacion (2018)</td>
+        </tr>
+        <tr>
+          <td>Población total:</td>
+          <td>Media de edad:</td>
+          <td>Menos de 20:</td>
+          <td>Mas de 50:</td>
+        </tr>
+        <tr>
+          <td><p style="margin: 0" id="population">{{municipio['datos_pobl'][0]}}</p></td>
+          <td><p style="margin: 0" id="age_average">{{municipio['datos_pobl'][1]}}</p></td>
+          <td><p style="margin: 0" id="age_less_20">{{municipio['datos_pobl'][2]}}</p></td>
+          <td><p style="margin: 0" id="age_more_50">{{municipio['datos_pobl'][3]}}</p></td>
+        </tr>
+      </table>
+
+      <div class="taxes">
+
+        <div class="tax_div" id="municipality_taxes">
+          <table class="table_data">
+            <tr>
+              <td colspan="2">Datos de impuestos municipales:</td>
+            </tr>
+            <tr *ngFor="let taxname of municipio['taxes_mun_labels']; let i = index"><td>{{taxname}}</td><td>{{municipio['taxes_mun_value'][i]}}</td></tr>
+          </table>
+        </div>
+
+        <div class="tax_div" id="regional_taxes">
+          <table class="table_data">
+            <tr>
+              <td colspan="2">Datos de impuestos regionales:</td>
+            </tr>
+            <tr *ngFor="let taxname of municipio['taxes_reg_labels']; let i = index"><td>{{taxname}}</td><td>{{municipio['taxes_reg_value'][i]}}</td></tr>
+          </table>
+        </div>
+
+      </div>
+
+      <table class="table_data" id="covid_data">
+        <tr>
+          <td colspan="3">Datos COVID</td>
+        </tr>
+        <tr>
+          <td>Estado del municipio:</td>
+          <td>Casos en el ultimo mes:</td>
+          <td>Casos totales:</td>
+        </tr>
+        <tr>
+          <td><p [ngStyle]="getCovidColor(municipio['datos_covid'][0])" id="covid_state">{{municipio['datos_covid'][0]}}</p></td>
+          <td><p style="margin: 0">{{municipio['datos_covid'][1]}}</p></td>
+          <td><p style="margin: 0">{{municipio['datos_covid'][2]}}</p></td>
+        </tr>
+      </table>
+    </div>
+
+    <p class="panel_title"> Servicios del municipio:</p>
+    <div *ngIf="servicios_to_show" id="services_offered">
+      <div *ngFor="let service of servicios" class="service">
+        <p class="service_title">{{service.name}}</p>
+        <img src="{{service.img}}">
+      </div>
+    </div>
+  </div>
+  <p class="error_message" style="fonttext-align: center">{{errormessage}}</p>
+
+</div>

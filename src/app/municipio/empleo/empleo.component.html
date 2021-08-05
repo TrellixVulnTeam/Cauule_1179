@@ -1,0 +1,18 @@
+<div id="root_div">
+  <div *ngIf="empleos_to_show" id="empleo_panel">
+    <p class="title">Empleos en el municipio</p>
+    <div id="empleo_search">
+      <input type="text" #searchtext (keydown.enter)="searchEmpleo()" id="empleo_search_input">
+      <button id="search_empleo_btn" (click)="searchEmpleo()"><img src="assets/images/icons/search.png"></button>
+    </div>
+    <div *ngIf="empleos" id="empleo_ads">
+      <div *ngFor="let empleo of empleos">
+        <div *ngIf="empleo.name.toLowerCase().includes(searchtext.value.toLowerCase()) || empleo.descr.toLowerCase().includes(searchtext.value.toLowerCase())" class="empleo">
+          <p class="empleo_title">{{empleo.name}}</p>
+          <p class="empleo_descr">{{empleo.descr}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="text-align: center">{{errormessage}}</p>
+</div>

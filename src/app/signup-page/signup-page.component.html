@@ -1,0 +1,15 @@
+<div id="root_div">
+  <div id="login_div">
+    <p class="login_title">Nuevo usuario</p>
+    <input type="email" required #email name="username" placeholder="Correo">
+    <input type="email" required #email2 name="username" placeholder="Confirmar correo">
+    <input type="password" required minlength="6" #pass name="password" placeholder="Clave">
+    <input type="password" required minlength="6" #pass2 name="password" placeholder="Confirmar clave">
+    <div id ='login_buttons'>
+      <button id="register_button" (click)="onSignUp(email.value,email2.value,pass.value,pass2.value)" >Registrarse</button>
+    </div>
+  </div>
+  <div><p style="color: red">{{errorMessage}}</p> </div>
+</div>
+
+

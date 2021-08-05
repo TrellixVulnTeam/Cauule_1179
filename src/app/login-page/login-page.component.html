@@ -1,0 +1,12 @@
+<div id="root_div">
+  <div id="login_div">
+    <p class="login_title">Login</p>
+    <input type="email" required #mail name="username" placeholder="Usuario">
+    <input type="password" #pass name="password" placeholder="Clave">
+    <div id ='login_buttons'>
+      <button id="login_button" (click)="onSignIn(mail.value,pass.value)">Entrar</button>
+      <button id="register_button" routerLink="/signup">Registrarse</button>
+    </div>
+  </div>
+  <div><p style="color: red; font-size: 15px">{{errormessage}}</p></div>
+</div>

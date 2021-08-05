@@ -1,0 +1,18 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,300italic,400italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700' rel='stylesheet' type='text/css'>
+<div id="root_div">
+  <div id="buscador">
+    <select [(ngModel)]="provincia" (ngModelChange)="obtainMunicipios(provincia)" id="buscador_municipio">
+      <option *ngFor="let aux of provincias" [value]="aux">{{aux}}</option>
+    </select>
+  </div>
+  <h3>MUNICIPIOS REGISTRADOS:</h3>
+  <div *ngIf="municipios" id="lista_municipios">
+    <div *ngFor="let municipio of municipios" class ="municipio" (click)="selectMunicipio(municipio.id, municipio.name)">
+      <p class="nombre_municipio">{{municipio.name}}</p>
+      <img src="{{municipio.main_img}}">
+      <p class="descr_municipio">{{municipio.small_descr}}</p>
+    </div>
+  </div>
+  <p style="margin: 0 10px 0 10px; text-align: center">{{notfoundmessage}}</p>
+</div>

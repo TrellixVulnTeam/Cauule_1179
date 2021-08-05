@@ -1,0 +1,77 @@
+<div id="root_div">
+  <p class="title">Buscador de Viviendas</p>
+
+  <div id="search_box">
+
+    <div class="search_row">
+
+      <div class="search_option">
+        <select class="selector" required #type>
+          <option *ngFor="let aux of types" [value]="aux">{{aux}}</option>
+        </select>
+      </div>
+
+      <div class="search_option">
+        <select class="selector" required #action>
+          <option *ngFor="let aux of ['Alquilar','Comprar']">{{aux}}</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="search_row">
+      <div class="search_option">
+        <p class="option_title">Precio máximo:</p>
+        <input class="price" type="number" #pricel required value=0>
+        <p> - </p>
+        <input class="price" type="number" #priceh required name="username" value=500>
+        <p>€</p>
+      </div>
+    </div>
+
+    <div class="search_row">
+      <div class="search_option">
+        <p class="option_title">Metros:</p>
+        <input class="price" type="number" #metersl required value=0>
+        <p> - </p>
+        <input class="price" type="number" #metersh required value=550>
+        <p> m2</p>
+      </div>
+    </div>
+
+
+    <div class="search_row">
+      <div class="search_option">
+        <p class="option_title">Habitaciones:</p>
+        <select class="selector" required #rooms selected=5>
+          <option *ngFor="let aux of [0,1,2,3,4,5,6,7,8,9]" [selected]="aux == 9 ? true : null">{{aux}}</option>
+        </select>
+      </div>
+    </div>
+
+
+    <button id="search_button" (click)="searchViviendas(this.municipio_id,type.value,action.value)">BUSCAR</button>
+
+  </div>
+
+  <div *ngIf="viviendas_to_show" id="vivienda_panel">
+    <div *ngIf="viviendas" id="vivienda_seccion">
+      <div *ngFor="let aux of viviendas">
+        <div *ngIf="aux.meters >= metersl.value && aux.meters < metersh.value && aux.price >= pricel.value && aux.price < priceh.value && aux.bedrooms <= rooms.value" class="vivienda">
+          <div class="vivenda_img_div"><img src="{{aux.img}}"></div>
+          <div class="vivienda_data">
+            <p class="vivienda_address">{{aux.address}}</p>
+            <p class="vivienda_descr">{{aux.descr}}</p>
+            <p class="vivienda_price">{{aux.price}}€</p>
+            <p class="vivienda_meters">{{aux.type}} de {{aux.meters}}m2 disponible para {{aux.action}}</p>
+            <p class="vivienda_meters">Habitaciones: {{aux.bedrooms}}</p>
+            <p class="vivienda_tlf">Contacto: {{aux.tlf}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="text-align: center">{{errormessage}}</p>
+</div>
+
+

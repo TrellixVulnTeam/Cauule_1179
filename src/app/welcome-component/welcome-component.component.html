@@ -1,0 +1,14 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,300italic,400italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700' rel='stylesheet' type='text/css'>
+<div id="navbar" >
+  <div id="auxdiv"></div>
+  <div id="navbarlogodiv"><img id="navbarlogo" src="../assets/images/navbarlogo.png"></div>
+  <div id="loginimgdiv" (click)="onLogin()"><img id="loginimg" src="../assets/images/icons/{{logicon}}"></div>
+</div>
+<div id="dropdown_menu">
+  <div class="dropdown_element"><p class="username">{{username}}</p></div>
+  <div class="dropdown_element" (click)="onLogOut()"><p class="logout">Cerrar sesión</p></div>
+</div>
+<app-seleccion-municipio></app-seleccion-municipio>
+
+
