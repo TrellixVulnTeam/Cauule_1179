@@ -1,27 +1,45 @@
-# EmptySpain
+# Cauule
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
+Hi, welcome Cauule, the app aimed as a platform for small/unpopulated towns in Spain to gain population and businesses.
 
-## Development server
+Built in Angular 11 for the frontend and using Firebase as the database.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Requirements:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+NodeJS 12.x
 
-## Build
+Angular 11
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Installation (Ubuntu 18.04):
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+*sudo apt-get upgrade*
 
-## Running end-to-end tests
+*sudo apt-get update*
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+*sudo apt-get install curl -y*
 
-## Further help
+*curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -*
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+*sudo apt-get install nodejs -y*   (This install both required NodeJS and npm)
+
+*npm install -g @angular/cli*
+
+### Install Firebase API:
+
+In the terminal in the main directory of our project:
+
+*npm install firebase @angular/fire*
+
+
+
+
+
+## Execute the program:
+
+In the terminal in the main directory of our project:
+
+*ng serve*
+
+It will be available at localhost:4200 if that socket is not occupied.
