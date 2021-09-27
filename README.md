@@ -21,6 +21,7 @@ Main information about population, taxes, COVID statistics and main services.
 
 #### TURISMO (TOURISM):
 Main tourist attractions in the municipality:
+
 <img style="width: 500px;" src="https://i.imgur.com/HaOnMuc.png"/>
 
 #### VIVIENDA (ACCOMMODATION):
