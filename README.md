@@ -34,6 +34,12 @@ In the terminal in the main directory of our project:
 
 
 
+## Structure of the app:
+
+### Main selector:
+
+![MAINPAGE!] (https://i.imgur.com/V6mgH1G.png)
+
 
 
 ## Execute the program:
