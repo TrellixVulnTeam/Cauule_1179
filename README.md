@@ -38,7 +38,7 @@ In the terminal in the main directory of our project:
 
 ### Main selector:
 
-![MAINPAGE!] (https://i.imgur.com/V6mgH1G.png)
+<img src="https://i.imgur.com/V6mgH1G.png"/>
 
 
 
